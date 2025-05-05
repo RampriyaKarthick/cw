@@ -6,12 +6,18 @@
 function ConvertStringToCamelCase(word){
     let letters = word.split(/[_-]/)
     
-    return letters.filter(x => x!== '_' && x !== '-').join()
+    return letters.map((word,index) => {
+if(index === 0 )
+    return word;
+
+return word.charAt(0).toUpperCase()+word.slice(1)
+    })
+    .join('')
 
 
 }
 
-let c = ConvertStringToCamelCase("mmnvbdnv-jmcbsmjf_nmbfbd")
+let c = ConvertStringToCamelCase("mmnvbdnv-Jmcbsmjf_nmbfbd")
 console.log(c)
 let b = ConvertStringToCamelCase("Mjssf-xcnf_sdvshf-nfdn")
 console.log(b)
